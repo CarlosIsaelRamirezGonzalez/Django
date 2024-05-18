@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ block.super }}
+<h2>SignIn</h2>
+<form action="/signin/" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p  }}
+
+    <button>SignIn</button>
+
+</form>
+{% endblock content %}

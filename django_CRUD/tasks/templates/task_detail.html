@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ block.super }}
+
+    <h1>Task details</h1>
+
+    <h2>{{task.title}}</h2>
+    <p>
+        Description: {{task.description}}
+        <br>
+        Created Date: {{task.created}}
+    </p>
+
+    <form method="post">  # Si no se especifica action lo manda a la misma view
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Update</button>
+    </form>
+
+    <form action="{% url 'complete_task' task.id %}" method="post">
+        {% csrf_token %}
+        <button>Complete</button>
+    </form>
+    <form action="{% url 'delete_task' task.id %}" method="post">
+        {% csrf_token %}
+        <button>Delete</button>
+    </form>
+
+{% endblock content %}

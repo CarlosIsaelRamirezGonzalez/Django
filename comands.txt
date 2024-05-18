@@ -1,0 +1,17 @@
+django-admin startproject name_project . <-- Crear un nuevo proyecto (El punto hace que no cree una carpeta dentro de tu carpeta)
+
+python manage.py migrate <-- aplica todas las migraciones pendientes en tu base de datos.
+
+python manage.py runserver 127.0.0.1:8001 --settings=mysite.settings
+python manage.py runserver <-- Run the server
+
+python manage.py startapp name_app <-- Create an application
+
+python manage.py shell <-- Acceder a la consola
+
+python manage.py makemigrations name_app <-- create an initial migration for the name_app model
+
+
+python manage.py sqlmigrate blog 0001
+
+python manage.py createsuperuser <-- Crea un super usuario
